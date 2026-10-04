@@ -12,6 +12,7 @@ class Solution:
             
             # 【外層防呆】：如果現在的數字跟上一個一樣，直接跳過，避免產生重複的第一個零件
             if i > 0 and nums[i] == nums[i - 1]: #已排序，若兩數字相同，則會連續出現，直接跳過即可
+                #必須考慮 i > 0，否則 nums[i - 1] 會取到負數索引，造成 IndexError
                 continue #跳過這次迴圈，進入下一個 i 的迴圈
                 
             # a + b + c = 0  =>  target = - a = b + c
